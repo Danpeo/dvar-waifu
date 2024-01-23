@@ -1,0 +1,12 @@
+<div class="mx-4 mt-4 mb-4">
+  <button class="btn btn-primary" [routerLink]="['']">HOME</button>
+  <h1 class="display-3 txt-mid-pink text-center">Saved Pics ༼ ༎ຶ ෴ ༎ຶ༽</h1>
+
+
+  <app-loading *ngIf="!SavedPics"/>
+
+  <div *ngFor="let pic of SavedPics" class="mx-2 mb-2 mt-2">
+    <img alt="AAAAAAGH" src="{{pic.url}}"
+         class="pointer-cursor bg-secondary-2 img-preview">
+  </div>
+</div>

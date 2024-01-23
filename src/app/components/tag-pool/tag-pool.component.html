@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col">
+    <div *ngFor="let tag of selectedTags; let i = index;" class="d-inline-block">
+      <button class="btn btn-dark mx-1 mb-1"
+              *ngIf="(onlySfw && !tag.nsfw) || (!onlySfw && tag.nsfw)"
+              (click)="removeTags(i, selectedTags, excludedTags)">
+        {{tag.value}}
+      </button>
+    </div>
+
+    <div *ngFor="let tag of excludedTags; let i = index;" class="d-inline-block">
+      <button class="btn btn-secondary mx-1 mb-1 text-decoration-line-through"
+              *ngIf="(onlySfw && !tag.nsfw) || (!onlySfw && tag.nsfw)"
+              (click)="removeTags(i, excludedTags, selectedTags)">
+        {{tag.value}}
+      </button>
+    </div>
+  </div>
+</div>
+
