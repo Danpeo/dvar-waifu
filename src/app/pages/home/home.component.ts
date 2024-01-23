@@ -99,7 +99,7 @@ export class HomeComponent {
   }
 
   ifInSaved(waifu_waifuPics: null | Waifu_WaifuPics) {
-    return SavedPics.find(savedPic => savedPic.url === waifu_waifuPics?.url);
+    return SavedPics.length > 0 && SavedPics.find(savedPic => savedPic.url === waifu_waifuPics?.url);
   }
 
   private getTags(): void {
